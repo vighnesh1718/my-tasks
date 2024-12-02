@@ -451,9 +451,10 @@ tabsList.addEventListener("wheel", (event) => {
 </script>
 <script>
     // Get all the tabs, contents, and next buttons
-    const sequenceTabs = document.querySelectorAll(".scrollable-tabs-container a");
+const sequenceTabs = document.querySelectorAll(".scrollable-tabs-container a");
 const contents = document.querySelectorAll(".tabs-content");
 const nextButtons = document.querySelectorAll(".tabs-next");
+
 
 // Initialize the current tab index and the highest unlocked tab index
 let currentTabIndex = 0;
@@ -461,12 +462,12 @@ let unlockedTabIndex = 0;
 
 // Initialize tabs and contents
 function initTabs() {
-    tabs.forEach((tab, index) => {
+    sequenceTabs.forEach((tab, index) => {
         // Disable tabs that are not yet unlocked
         if (index > unlockedTabIndex) {
             tab.classList.add("disabled");
             tab.style.pointerEvents = "none";
-           
+            
         }
 
         tab.addEventListener("click", () => {
@@ -487,25 +488,42 @@ function initTabs() {
 // Function to switch to a specific tab index
 function switchTab(index) {
     // Remove active class from all tabs and hide all contents
-    tabs.forEach((tab) => tab.classList.remove("active"));
+    sequenceTabs.forEach((tab) => tab.classList.remove("active"));
     contents.forEach((content) => content.style.display = "none");
 
     // Add active class to the selected tab and show the corresponding content
-    tabs[index].classList.add("active");
+    sequenceTabs[index].classList.add("active");
     contents[index].style.display = "block";
 
     currentTabIndex = index;
+
+    // Bring the active tab into view within the tabsList
+    const activeTab = sequenceTabs[index];
+
+    // Get left position of active tab relative to the tabsList
+    const tabLeft = activeTab.offsetLeft;
+    const tabRight = tabLeft + activeTab.offsetWidth;
+    const listScrollLeft = tabsList.scrollLeft;
+    const listWidth = tabsList.offsetWidth;
+
+    if (tabLeft < listScrollLeft) {
+        // Active tab is to the left of visible area; scroll to it
+        tabsList.scrollLeft = tabLeft;
+    } else if (tabRight > listScrollLeft + listWidth) {
+        // Active tab is to the right of visible area; scroll to it
+        tabsList.scrollLeft = tabRight - listWidth;
+    }
 }
 
 // Handle "NEXT" button clicks
 nextButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-        if (index < tabs.length - 1) {
+        if (index < sequenceTabs.length - 1) {
             // Unlock the next tab
             unlockedTabIndex = Math.max(unlockedTabIndex, index + 1);
-            tabs[index + 1].classList.remove("disabled");
-            tabs[index + 1].style.pointerEvents = "auto";
-            tabs[index + 1].style.opacity = "1";
+            sequenceTabs[index + 1].classList.remove("disabled");
+            sequenceTabs[index + 1].style.pointerEvents = "auto";
+            sequenceTabs[index + 1].style.opacity = "1";
 
             // Switch to the next tab
             switchTab(index + 1);
@@ -517,6 +535,5 @@ nextButtons.forEach((button, index) => {
 });
 
 initTabs();
-
 </script>
 
