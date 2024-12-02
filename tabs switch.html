@@ -1,0 +1,300 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <title>My Tasks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="https://www.eklavvya.com/wp-content/uploads/2024/07/EY-Logo.webp" alt="EY Logo">
+    </div>
+    <nav>
+        <button class="nav-btn">Site Navigation</button>
+        <button class="nav-btn">Tech Support</button>
+    </nav>
+</header>
+
+<main>
+    
+<div class="scrollable-tabs-container">
+    <div class="left-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+      
+      </div>
+      <ul>
+        <li>
+            <a class="active " ID="faq-item-1">About the Company</a>
+        </li>
+        <li>
+            <a ID="faq-item-2">Market Presence</a>
+        </li>
+        <li>
+            <a ID="faq-item-3">Growth Plans</a>
+        </li>
+        
+        <li>
+            <a ID="faq-item-4">Organizational Priorities</a>
+        </li>
+        <li>
+            <a ID="faq-item-6">Study Center</a>
+        </li>
+        
+    <li>
+            <a ID="faq-item-5">Your Role and Current Context</a>
+        </li>
+         
+        
+
+
+      </ul>
+      <div class="right-arrow active">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+          
+      </div>
+</div>
+<div class="tabs-content"></div>
+</main>
+
+</body>
+</html>
+<style>
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-image: url('https://wordpress-63123-2643454.cloudwaysapps.com/wp-content/uploads/2024/11/White-Dark-Blue-Futuristic-Robot-Desktop-Wallpaper-3.png');    
+    color: #333;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0px 0px 0px 0px;
+        width: 100%; /* Ensure header stretches across the screen */
+    max-width: 1000px;
+}
+
+.header .logo img {
+    height: 40px;
+  
+}
+
+.nav-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+ 
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Main section styling */
+main {
+    
+    margin: 20px 0px;
+    width: 90%;
+}
+
+.scrollable-tabs-container
+{
+    background-color: transparent;
+    
+    max-width: 100%;
+    margin: 15px auto;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.scrollable-tabs-container svg{
+    width: 25px;
+  height: 25px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    color: black;
+    background-color: white;
+
+}
+.scrollable-tabs-container ul
+{
+    display: flex;
+    gap:16px;
+
+    margin: 0;
+    list-style: none;
+    overflow-x: scroll;
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+}
+.scrollable-tabs-container ul::-webkit-scrollbar {
+    display:none;
+}
+.scrollable-tabs-container a{
+    color: #000;
+    text-decoration: none!important;
+    background-color: #fff;
+    padding: 10px 40px;
+        display: inline-block;
+    user-select: none;
+    white-space: nowrap;
+      border-radius: 8px;
+      font-weight: 700!important;
+      font-size: 18px;
+}
+
+.scrollable-tabs-container a.active{
+    background-color: #1B4697;
+    color:#fff;
+    border-radius: 8px;
+    font-weight:700!important;
+    border:none!important;
+
+}
+.scrollable-tabs-container .right-arrow,
+.scrollable-tabs-container .left-arrow
+{
+    display: flex;
+position: absolute;
+height: 100%;
+width: 100px;
+top:0;
+align-items: center;
+padding: 0 10px;
+display: none;
+}
+.scrollable-tabs-container .right-arrow.active,
+.scrollable-tabs-container .left-arrow.active
+{
+display: flex;
+}
+.scrollable-tabs-container .right-arrow
+{
+    right: 0;
+    justify-content: flex-end;
+    background: linear-gradient(to left, #fff  50%, transparent);
+}
+.scrollable-tabs-container .left-arrow{
+    background: linear-gradient(to right, #fff 50%, transparent);
+
+}
+.scrollable-tabs-container svg:hover{
+    background-color: #fff;
+}
+@media (max-width: 991px) {
+  .scrollable-tabs-container .right-arrow.active, .scrollable-tabs-container .left-arrow.active
+  {
+      display: none;
+  }
+}
+
+.tabs-content
+{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    height: 100px; 
+    margin-top: 35px;
+}
+
+</style>
+<script>
+    const tabs = document.querySelectorAll(".scrollable-tabs-container a");
+const rightArrow = document.querySelector(".scrollable-tabs-container .right-arrow svg");
+const leftArrow = document.querySelector(".scrollable-tabs-container .left-arrow svg");
+
+const tabsList = document.querySelector(".scrollable-tabs-container ul");
+const leftArrowContainer = document.querySelector(".scrollable-tabs-container .left-arrow");
+const rightArrowContainer = document.querySelector(".scrollable-tabs-container .right-arrow");
+
+const removeAllActiveClasses = () => {
+    tabs.forEach((tab) => {
+        tab.classList.remove("active");
+    });
+};
+
+tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        removeAllActiveClasses();
+        tab.classList.add("active");
+    });
+});
+
+const manageIcons = () => {
+    if (tabsList.scrollLeft >= 20) {
+        leftArrowContainer.classList.add("active");
+    } else {
+        leftArrowContainer.classList.remove("active");
+    }
+
+    let maxScrollValue = tabsList.scrollWidth - tabsList.clientWidth - 20;
+
+    if (tabsList.scrollLeft >= maxScrollValue) {
+        rightArrowContainer.classList.remove("active");
+    } else {
+        rightArrowContainer.classList.add("active");
+    }
+};
+
+rightArrow.addEventListener("click", () => {
+    tabsList.scrollLeft += 200;
+    manageIcons();
+});
+
+leftArrow.addEventListener("click", () => {
+    tabsList.scrollLeft -= 200;
+    manageIcons();
+});
+
+tabsList.addEventListener("scroll", manageIcons);
+
+// Add mouse wheel scrolling functionality
+tabsList.addEventListener("wheel", (event) => {
+    if (event.deltaY > 0) {
+        // Scroll down
+        tabsList.scrollLeft += 50;
+    } else {
+        // Scroll up
+        tabsList.scrollLeft -= 50;
+    }
+
+    // Prevent the default behavior of the mouse wheel (e.g., page scrolling)
+    event.preventDefault();
+
+    manageIcons();
+});
+
+</script>
