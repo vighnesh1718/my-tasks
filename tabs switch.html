@@ -454,6 +454,101 @@ display: flex;
 
 
 
+
+
+    .tasks {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+
+.tasks-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.task-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-bottom: 6px solid blue;
+    backdrop-filter: blur(10px);
+}
+
+.task-time
+
+{
+    display: flex;
+  justify-content: center;
+}
+
+
+.task-card img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.task-card h2 {
+    font-size: 22px;
+    color: #007bff;
+  margin: 0px 0px 10px 0px;
+}
+
+.task-card p {
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+.start-btn {
+    background-color: #1B4697;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 90%;
+  font-size: 16px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+}
+
+.ft-nav-btn
+{
+    background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  width: 90%;
+  font-size: 16px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+}
+
+.start-btn:hover {
+    transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ft-nav-btn:hover
+{
+    transform: translateY(-5px);
+}
+
+    
+
 </style>
 <script>
     const tabs = document.querySelectorAll(".scrollable-tabs-container a");
