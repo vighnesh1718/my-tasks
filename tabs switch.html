@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <title>EY Assessments</title>
+    <title>My Tasks</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -60,7 +60,23 @@
           
       </div>
 </div>
-<div class="tabs-content"></div>
+<div class="tabs-content">
+    <h1>About the Company</h1>
+        <p>
+            Bharat Manufacturing Solutions (BMS) has recently acquired XYZ Manufacturing, a company based out of Copenhagen, Denmark, specializing in advanced robotics for industrial automation. XYZ Manufacturing has a strong R&D team, innovative product line, and a different organizational culture compared to BMS. The acquisition aims to enhance BMS's product offerings and market presence in the industrial automation sector.
+        </p>
+        <p>
+            Post-acquisition, BMS faces significant challenges in integrating XYZ Manufacturing into its existing corporate structure. These challenges include cultural misalignment, redundant processes, and systems incompatibility, different employment laws, etc., which could potentially lead to operational inefficiencies, employee dissatisfaction and loss of key talent, and a decline in productivity. BMS has acquired XYZ while the above scenarios and challenges prevail at the organization during integration.
+        </p>
+        <h2>Your Role:</h2>
+        <p>
+            You are the CHRO of BMS and have joined the company 6 months back. You are still in the process of familiarizing yourself with the current practices in BMS and now are also expected to manage the integration of BMS and XYZ in a seamless manner.
+        </p>
+        <p>
+            While you decide on the best possible options for managing the integration process, do keep in mind the various organizational priorities in BMS.
+        </p>
+        <button class="tabs-next">NEXT</button>
+</div>
 </main>
 
 </body>
@@ -226,10 +242,34 @@ display: flex;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    height: 100px; 
+    padding: 20px;
     margin-top: 35px;
 }
 
+.tabs-content h1
+{
+    text-align: center;
+  font-weight: 800;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+.tabs-next
+{
+    background-color: #1B4697;
+    color: white;
+    padding: 8px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  font-size: 16px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700; 
+  display: block; 
+  margin: 30px auto 0px auto;
+}
 </style>
 <script>
     const tabs = document.querySelectorAll(".scrollable-tabs-container a");
